@@ -33,7 +33,7 @@ export function Navbar() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex items-center justify-between">
             <a href="#" className="flex items-center gap-2 group">
-              <span className="font-display font-bold text-2xl tracking-tighter text-white group-hover:text-primary transition-colors">
+              <span className="font-display font-bold text-2xl tracking-tighter text-foreground group-hover:text-primary transition-colors">
                 AI<span className="text-primary">Ground</span>.com
               </span>
             </a>
@@ -45,7 +45,7 @@ export function Navbar() {
                   <li key={link.label}>
                     <a 
                       href={link.href} 
-                      className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+                      className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
                     </a>
@@ -62,7 +62,7 @@ export function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button 
-              className="lg:hidden text-white p-2"
+              className="lg:hidden text-foreground p-2"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open Menu"
             >
@@ -83,12 +83,12 @@ export function Navbar() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex justify-between items-center mb-12">
-                <span className="font-display font-bold text-2xl tracking-tighter text-white">
+                <span className="font-display font-bold text-2xl tracking-tighter text-foreground">
                   AI<span className="text-primary">Ground</span>.com
                 </span>
                 <button 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white p-2"
+                  className="text-foreground p-2"
                   aria-label="Close Menu"
                 >
                   <X size={24} />
@@ -100,7 +100,7 @@ export function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xl font-medium text-muted-foreground hover:text-white transition-colors"
+                    className="text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>

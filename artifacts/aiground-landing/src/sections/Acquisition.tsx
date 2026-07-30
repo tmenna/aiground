@@ -3,36 +3,36 @@ import { Lock, ArrowRight } from 'lucide-react';
 
 export function Acquisition() {
   return (
-    <section id="acquire" className="py-32 relative border-y border-white/10">
+    <section id="acquire" className="py-32 relative border-y border-border bg-muted/30">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsla(217,100%,60%,0.08)_0%,transparent_60%)]"></div>
       
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
         <Reveal>
-          <div className="glass-card rounded-[2.5rem] p-8 md:p-16 text-center border-primary/20 shadow-[0_0_80px_hsla(217,100%,60%,0.15)] relative overflow-hidden">
+          <div className="glass-card rounded-[2.5rem] p-8 md:p-16 text-center border-primary/20 shadow-[0_8px_40px_-8px_hsla(217,91%,50%,0.18)] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
             
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium mb-4">
               Available for Acquisition
             </h2>
             
-            <div className="text-5xl md:text-7xl font-mono font-bold text-white mb-8 break-words text-glow">
+            <div className="text-5xl md:text-7xl font-mono font-bold text-foreground mb-8 break-words text-glow">
               AIGround.com
             </div>
             
-            <div className="inline-block bg-white/5 border border-white/10 rounded-2xl px-8 py-4 mb-10">
+            <div className="inline-block bg-primary/5 border border-primary/15 rounded-2xl px-8 py-4 mb-10">
               <div className="text-sm text-muted-foreground uppercase tracking-widest mb-1">Asking Price</div>
-              <div className="text-3xl md:text-5xl font-display font-bold text-white">
+              <div className="text-3xl md:text-5xl font-display font-bold text-foreground">
                 $100,000 <span className="text-xl text-muted-foreground font-normal">USD</span>
               </div>
             </div>
             
-            <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 mb-10 max-w-2xl mx-auto">
               Serious inquiries and qualified offers are welcome. Acquire this category-defining brand identity today.
             </p>
             
             <a 
               href="mailto:holly@holtekllc.com"
-              className="inline-flex items-center justify-center gap-3 bg-white text-black hover:bg-white/90 text-xl font-bold px-10 py-5 rounded-full transition-all hover:scale-105"
+              className="inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground hover:bg-primary/90 text-xl font-bold px-10 py-5 rounded-full transition-all hover:scale-105 shadow-lg"
             >
               Make an Offer
               <ArrowRight className="w-6 h-6" />

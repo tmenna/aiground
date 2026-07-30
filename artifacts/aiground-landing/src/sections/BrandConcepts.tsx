@@ -23,7 +23,7 @@ export function BrandConcepts() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <Reveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
               Potential Brand Concepts
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
@@ -37,12 +37,12 @@ export function BrandConcepts() {
             const Icon = concept.icon;
             return (
               <Reveal key={index} delay={index * 0.05}>
-                <div className="glass-card p-6 rounded-2xl flex flex-col items-center text-center h-full hover:bg-white/[0.02] transition-colors group">
+                <div className="glass-card p-6 rounded-2xl flex flex-col items-center text-center h-full hover:shadow-md transition-all group">
                   <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
                     <Icon className="w-6 h-6 text-secondary" />
                   </div>
                   <div className="text-xs font-mono text-muted-foreground mb-2">AI Ground</div>
-                  <h3 className="text-sm font-semibold text-white font-display">
+                  <h3 className="text-sm font-semibold text-foreground font-display">
                     {concept.title}
                   </h3>
                 </div>

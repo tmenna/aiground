@@ -40,7 +40,7 @@ export function WhyAIGround() {
       <div className="container mx-auto px-6 max-w-7xl">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
               Why <span className="text-primary">AIGround</span>.com?
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -56,7 +56,7 @@ export function WhyAIGround() {
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   {reason.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 font-display tracking-tight">
+                <h3 className="text-xl font-semibold text-foreground mb-3 font-display tracking-tight">
                   {reason.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">

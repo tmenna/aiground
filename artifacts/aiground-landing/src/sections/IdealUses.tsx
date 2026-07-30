@@ -28,12 +28,12 @@ const useCases = [
 
 export function IdealUses() {
   return (
-    <section id="uses" className="py-24 relative bg-card border-y border-white/5">
+    <section id="uses" className="py-24 relative bg-muted/50 border-y border-border">
       <div className="container mx-auto px-6 max-w-7xl">
         <Reveal>
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
                 Limitless <span className="text-primary">Potential</span>
               </h2>
               <p className="text-muted-foreground text-lg">
@@ -41,7 +41,7 @@ export function IdealUses() {
               </p>
             </div>
             <div className="hidden md:block">
-              <div className="text-6xl font-display font-bold text-white/5">
+              <div className="text-6xl font-display font-bold text-foreground/[0.05]">
                 23+
               </div>
             </div>
@@ -52,8 +52,8 @@ export function IdealUses() {
         <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
           {useCases.map((useCase, index) => (
             <Reveal key={index} delay={Math.random() * 0.3} className="break-inside-avoid">
-              <div className="p-6 rounded-2xl bg-background border border-white/5 hover:border-primary/30 transition-colors group">
-                <h3 className="text-lg font-semibold text-white mb-2 font-display group-hover:text-primary transition-colors">
+              <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-colors group shadow-sm">
+                <h3 className="text-lg font-semibold text-foreground mb-2 font-display group-hover:text-primary transition-colors">
                   {useCase.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
