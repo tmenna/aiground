@@ -60,7 +60,7 @@ export function WhyAIGround() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {reasons.map((reason, index) => (
             <FadeInView key={index} delay={index * 0.05}>
-              <div>
+              <div className="border-l-2 border-primary pl-5">
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {reason.title}
                 </h3>

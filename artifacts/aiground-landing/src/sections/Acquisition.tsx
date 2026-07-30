@@ -38,7 +38,7 @@ export function Acquisition() {
                 <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider mb-2">
                   Asking Price
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-foreground">
+                <div className="text-4xl md:text-5xl font-bold text-primary">
                   $100,000 <span className="text-xl text-muted-foreground font-normal">USD</span>
                 </div>
               </div>
