@@ -1,53 +1,69 @@
-import { Reveal } from '@/components/Reveal';
-import { Lock, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Lock } from 'lucide-react';
+
+function FadeInView({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export function Acquisition() {
   return (
-    <section id="acquire" className="py-32 relative border-y border-border bg-muted/30">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsla(217,100%,60%,0.08)_0%,transparent_60%)]"></div>
-      
-      <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <Reveal>
-          <div className="glass-card rounded-[2.5rem] p-8 md:p-16 text-center border-primary/20 shadow-[0_8px_40px_-8px_hsla(217,91%,50%,0.18)] relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-            
-            <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium mb-4">
+    <section id="acquire" className="py-24 px-6 border-t border-border">
+      <div className="container mx-auto max-w-4xl">
+        <FadeInView>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-12">
               Available for Acquisition
             </h2>
             
-            <div className="text-5xl md:text-7xl font-mono font-bold text-foreground mb-8 break-words text-glow">
-              AIGround.com
-            </div>
-            
-            <div className="inline-block bg-primary/5 border border-primary/15 rounded-2xl px-8 py-4 mb-10">
-              <div className="text-sm text-muted-foreground uppercase tracking-widest mb-1">Asking Price</div>
-              <div className="text-3xl md:text-5xl font-display font-bold text-foreground">
-                $100,000 <span className="text-xl text-muted-foreground font-normal">USD</span>
+            <div className="mb-8">
+              <div className="font-mono text-4xl md:text-6xl font-bold text-foreground mb-8">
+                AIGround.com
+              </div>
+              
+              <div className="inline-block mb-6">
+                <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider mb-2">
+                  Asking Price
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-foreground">
+                  $100,000 <span className="text-xl text-muted-foreground font-normal">USD</span>
+                </div>
               </div>
             </div>
             
-            <p className="text-lg text-foreground/70 mb-10 max-w-2xl mx-auto">
-              Serious inquiries and qualified offers are welcome. Acquire this category-defining brand identity today.
+            <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Serious inquiries and qualified offers are welcome.
             </p>
             
             <a 
               href="mailto:holly@holtekllc.com"
-              className="inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground hover:bg-primary/90 text-xl font-bold px-10 py-5 rounded-full transition-all hover:scale-105 shadow-lg"
+              className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold px-8 py-3 rounded-md transition-colors mb-12"
+              aria-label="Make an offer via email"
             >
               Make an Offer
-              <ArrowRight className="w-6 h-6" />
             </a>
-          </div>
-        </Reveal>
 
-        <Reveal delay={0.2}>
-          <div className="mt-12 flex items-center justify-center gap-4 text-muted-foreground">
-            <Lock className="w-5 h-5 text-green-400" />
-            <p className="text-sm md:text-base">
-              <strong>Secure Transaction:</strong> All transactions are completed through a mutually agreed reputable escrow service, ensuring a secure and professional acquisition process for both buyer and seller.
-            </p>
+            <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground pt-8 border-t border-border max-w-2xl mx-auto">
+              <Lock className="w-4 h-4 flex-shrink-0" />
+              <p className="text-left">
+                <strong className="text-foreground">Secure Transaction:</strong> Acquisition completed through a mutually agreed reputable escrow service to ensure a secure transaction for both buyer and seller.
+              </p>
+            </div>
           </div>
-        </Reveal>
+        </FadeInView>
       </div>
     </section>
   );

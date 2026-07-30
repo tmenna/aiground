@@ -2,69 +2,74 @@ import { useEffect } from 'react';
 
 export function SEO() {
   useEffect(() => {
-    document.title = "AIGround.com | Premium AI Domain Name for Acquisition";
-    
-    const setMeta = (name: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let meta = document.querySelector(`meta[${attr}="${name}"]`);
+    // Set page title
+    document.title = 'AIGround.com — Premium AI Domain for Sale | $100,000';
+
+    // Create or update meta tags
+    const metaTags = [
+      { name: 'description', content: 'AIGround.com is a premium .com domain built for the next generation of artificial intelligence. Short, memorable, and highly brandable. Available for acquisition at $100,000.' },
+      { property: 'og:title', content: 'AIGround.com — Premium AI Domain for Sale' },
+      { property: 'og:description', content: 'A premium .com domain built for the next generation of artificial intelligence. Short, memorable, and highly brandable.' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://aiground.com' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'AIGround.com — Premium AI Domain for Sale' },
+      { name: 'twitter:description', content: 'A premium .com domain built for the next generation of artificial intelligence. Short, memorable, and highly brandable.' },
+    ];
+
+    metaTags.forEach(({ name, property, content }) => {
+      const attribute = name ? 'name' : 'property';
+      const value = name || property;
+      let meta = document.querySelector(`meta[${attribute}="${value}"]`);
+      
       if (!meta) {
         meta = document.createElement('meta');
-        meta.setAttribute(attr, name);
+        meta.setAttribute(attribute, value!);
         document.head.appendChild(meta);
       }
+      
       meta.setAttribute('content', content);
-    };
+    });
 
-    setMeta('description', 'AIGround.com is a premium .com domain built for the next generation of artificial intelligence. Available for acquisition at $100,000.');
-    setMeta('og:title', 'AIGround.com | Premium AI Domain for Acquisition', true);
-    setMeta('og:description', 'Own one of the Internet\'s premier AI brands. Available for acquisition at $100,000.', true);
-    setMeta('og:type', 'website', true);
-    setMeta('theme-color', '#06060a');
-
-    // Schema.org
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "AIGround.com Premium Domain Acquisition",
-      "description": "AIGround.com is a premium .com domain built for the next generation of artificial intelligence. Available for acquisition.",
-      "offers": {
-        "@type": "Offer",
-        "price": "100000.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://aiground.com"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Holtek Solutions LLC",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2108 N ST STE N",
-          "addressLocality": "Sacramento",
-          "addressRegion": "CA",
-          "postalCode": "95816",
-          "addressCountry": "USA"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-951-551-4528",
-          "email": "holly@holtekllc.com",
-          "contactType": "sales"
-        }
-      }
-    };
-
-    let script = document.querySelector('#schema-org');
-    if (!script) {
-      script = document.createElement('script');
-      script.id = 'schema-org';
-      script.setAttribute('type', 'application/ld+json');
-      document.head.appendChild(script);
+    // Add JSON-LD structured data
+    const existingScript = document.querySelector('script[type="application/ld+json"]');
+    if (existingScript) {
+      existingScript.remove();
     }
-    script.textContent = JSON.stringify(schema);
-    
-    // Add dark class to html to enforce dark theme globally
-    document.documentElement.classList.add('dark');
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          name: 'Holtek Solutions LLC',
+          url: 'https://aiground.com',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '2108 N ST STE N',
+            addressLocality: 'Sacramento',
+            addressRegion: 'CA',
+            postalCode: '95816',
+            addressCountry: 'US'
+          },
+          contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '+1-951-551-4528',
+            email: 'holly@holtekllc.com',
+            contactType: 'Sales'
+          }
+        },
+        {
+          '@type': 'WebPage',
+          name: 'AIGround.com — Premium AI Domain for Sale',
+          description: 'AIGround.com is a premium .com domain built for the next generation of artificial intelligence. Short, memorable, and highly brandable.',
+          url: 'https://aiground.com'
+        }
+      ]
+    });
+    document.head.appendChild(script);
   }, []);
 
   return null;

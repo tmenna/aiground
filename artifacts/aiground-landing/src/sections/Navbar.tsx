@@ -8,17 +8,15 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Why AI Ground', href: '#why' },
-    { label: 'Ideal Uses', href: '#uses' },
-    { label: 'Brand Concepts', href: '#concepts' },
-    { label: 'Why Premium Domains', href: '#premium' },
+    { label: 'Why', href: '#why' },
+    { label: 'Ideal For', href: '#uses' },
     { label: 'Acquire', href: '#acquire' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -26,35 +24,35 @@ export function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'glass-nav py-4' : 'bg-transparent py-6'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+          isScrolled ? 'nav-blur border-b border-border' : 'bg-transparent'
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex items-center justify-between">
-            <a href="#" className="flex items-center gap-2 group">
-              <span className="font-display font-bold text-2xl tracking-tighter text-foreground group-hover:text-primary transition-colors">
-                AI<span className="text-primary">Ground</span>.com
-              </span>
+          <div className="flex items-center justify-between h-16">
+            <a 
+              href="#" 
+              className="font-semibold text-lg text-foreground hover:text-primary transition-colors"
+              aria-label="AIGround.com home"
+            >
+              AIGround.com
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8">
-              <ul className="flex items-center gap-8">
-                {navLinks.map((link) => (
-                  <li key={link.label}>
-                    <a 
-                      href={link.href} 
-                      className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.label}
+                  href={link.href} 
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
               <a 
                 href="mailto:holly@holtekllc.com"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold px-6 py-2.5 rounded-full transition-all shadow-[0_0_20px_hsla(217,100%,60%,0.3)] hover:shadow-[0_0_30px_hsla(217,100%,60%,0.5)]"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold px-5 py-2 rounded-md transition-colors"
+                aria-label="Make an offer via email"
               >
                 Make an Offer
               </a>
@@ -62,11 +60,11 @@ export function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button 
-              className="lg:hidden text-foreground p-2"
+              className="md:hidden text-foreground p-2 -mr-2"
               onClick={() => setMobileMenuOpen(true)}
-              aria-label="Open Menu"
+              aria-label="Open menu"
             >
-              <Menu size={24} />
+              <Menu size={20} />
             </button>
           </div>
         </div>
@@ -79,35 +77,36 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[60] bg-background md:hidden"
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex justify-between items-center mb-12">
-                <span className="font-display font-bold text-2xl tracking-tighter text-foreground">
-                  AI<span className="text-primary">Ground</span>.com
+                <span className="font-semibold text-lg text-foreground">
+                  AIGround.com
                 </span>
                 <button 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-foreground p-2"
-                  aria-label="Close Menu"
+                  className="text-foreground p-2 -mr-2"
+                  aria-label="Close menu"
                 >
-                  <X size={24} />
+                  <X size={20} />
                 </button>
               </div>
-              <nav className="flex flex-col gap-6 text-center">
+              <nav className="flex flex-col gap-1">
                 {navLinks.map((link) => (
                   <a 
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-3"
                   >
                     {link.label}
                   </a>
                 ))}
                 <a 
                   href="mailto:holly@holtekllc.com"
-                  className="mt-8 bg-primary text-primary-foreground text-lg font-semibold px-8 py-4 rounded-full"
+                  className="mt-6 bg-primary text-primary-foreground text-base font-semibold px-5 py-3 rounded-md text-center"
+                  aria-label="Make an offer via email"
                 >
                   Make an Offer
                 </a>

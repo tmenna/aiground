@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -52,62 +52,56 @@
 }
 
 :root {
-  --button-outline: rgba(0, 0, 0, 0.08);
-  --badge-outline: rgba(0, 0, 0, 0.04);
-  --opaque-button-border-intensity: -8;
-  --elevate-1: rgba(0, 0, 0, 0.03);
-  --elevate-2: rgba(0, 0, 0, 0.07);
-
-  /* Clean light theme */
-  --background: 210 25% 98%;
-  --foreground: 220 30% 12%;
-  --border: 220 15% 88%;
+  /* Clean light theme - Replit Docs inspired */
+  --background: 210 20% 98%;
+  --foreground: 220 25% 12%;
+  --border: 220 13% 91%;
 
   --card: 0 0% 100%;
-  --card-foreground: 220 30% 12%;
-  --card-border: 220 15% 88%;
+  --card-foreground: 220 25% 12%;
+  --card-border: 220 13% 91%;
 
   --sidebar: 0 0% 100%;
-  --sidebar-foreground: 220 30% 12%;
-  --sidebar-border: 220 15% 88%;
+  --sidebar-foreground: 220 25% 12%;
+  --sidebar-border: 220 13% 91%;
   --sidebar-primary: 217 91% 50%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 220 15% 94%;
-  --sidebar-accent-foreground: 220 30% 12%;
+  --sidebar-accent: 220 13% 95%;
+  --sidebar-accent-foreground: 220 25% 12%;
   --sidebar-ring: 217 91% 50%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 220 30% 12%;
-  --popover-border: 220 15% 88%;
+  --popover-foreground: 220 25% 12%;
+  --popover-border: 220 13% 91%;
 
   --primary: 217 91% 50%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 260 65% 55%;
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 220 13% 95%;
+  --secondary-foreground: 220 25% 12%;
 
-  --muted: 220 15% 94%;
-  --muted-foreground: 220 15% 45%;
+  --muted: 220 13% 95%;
+  --muted-foreground: 220 15% 50%;
 
-  --accent: 250 75% 58%;
+  --accent: 217 91% 50%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 220 15% 88%;
+  --input: 220 13% 91%;
   --ring: 217 91% 50%;
 
   --chart-1: 217 91% 50%;
-  --chart-2: 260 65% 55%;
+  --chart-2: 220 13% 50%;
   --chart-3: 190 85% 40%;
   --chart-4: 250 75% 58%;
   --chart-5: 290 65% 50%;
 
-  --app-font-sans: 'Inter', sans-serif;
+  --app-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --app-font-serif: Georgia, serif;
-  --app-font-mono: Menlo, monospace;
-  --app-font-display: 'Space Grotesk', sans-serif;
+  --app-font-mono: 'SF Mono', Monaco, 'Cascadia Code', Menlo, Consolas, monospace;
+  --app-font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --radius: 0.5rem;
 
@@ -119,34 +113,34 @@
 }
 
 .dark {
-  --background: 210 25% 98%;
-  --foreground: 220 30% 12%;
-  --border: 220 15% 88%;
+  --background: 210 20% 98%;
+  --foreground: 220 25% 12%;
+  --border: 220 13% 91%;
 
   --card: 0 0% 100%;
-  --card-foreground: 220 30% 12%;
-  --card-border: 220 15% 88%;
+  --card-foreground: 220 25% 12%;
+  --card-border: 220 13% 91%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 220 30% 12%;
-  --popover-border: 220 15% 88%;
+  --popover-foreground: 220 25% 12%;
+  --popover-border: 220 13% 91%;
 
   --primary: 217 91% 50%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 260 65% 55%;
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 220 13% 95%;
+  --secondary-foreground: 220 25% 12%;
 
-  --muted: 220 15% 94%;
-  --muted-foreground: 220 15% 45%;
+  --muted: 220 13% 95%;
+  --muted-foreground: 220 15% 50%;
 
-  --accent: 250 75% 58%;
+  --accent: 217 91% 50%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 220 15% 88%;
+  --input: 220 13% 91%;
   --ring: 217 91% 50%;
 }
 
@@ -169,21 +163,9 @@
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 24px hsla(var(--primary) / 0.35);
-  }
-  .bg-glow {
-    box-shadow: 0 0 40px hsla(var(--primary) / 0.12);
-  }
-  .glass-card {
-    background: hsl(0 0% 100%);
-    border: 1px solid hsl(220 15% 88%);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-  }
-  .glass-nav {
-    background: hsla(0, 0%, 100%, 0.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid hsl(220 15% 88%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  .nav-blur {
+    background: hsla(210, 20%, 98%, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }

@@ -1,0 +1,165 @@
+Build a premium landing page for domains.holtekllc.com showcasing AIGround.com as a premium domain available for acquisition.
+
+The website should present AIGround.com as a memorable, highly brandable .com domain for organizations building the future of artificial intelligence.
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Use the Replit Documentation website as design inspiration:
+
+https://docs.replit.com/build/welcome
+
+Use its typography, spacing, visual hierarchy, color palette, and clean aesthetic as inspiration while creating an original design.
+
+The website should feel crisp, modern, minimal, easy to read, and highly professional.
+
+Avoid flashy marketing effects, excessive animations, or anything resembling a typical parked domain page.
+
+Do not overwhelm visitors with excessive marketing copy. Keep the page concise and allow the strength of the AIGround.com brand to be the primary focus.
+
+==================================================
+HERO
+==================================================
+
+Display prominently:
+
+AIGround.com
+
+Headline:
+
+Own One of the Internet's Premier AI Brands
+
+Subheadline:
+
+AIGround.com is a premium .com domain built for the next generation of artificial intelligence. Short, memorable, and highly brandable, it provides an exceptional foundation for companies building innovative AI products and services.
+
+Display two primary buttons:
+
+• Make an Offer
+• Contact Us
+
+==================================================
+WHY CHOOSE AIGROUND.COM
+==================================================
+
+Display six feature cards:
+
+• Premium .COM
+• Short & Memorable
+• Highly Brandable
+• Built for the AI Era
+• Globally Recognizable
+• Versatile Across AI Industries
+
+==================================================
+IDEAL FOR
+==================================================
+
+Include a short introduction:
+
+AIGround.com is versatile enough to support organizations across nearly every sector of the artificial intelligence ecosystem.
+
+Display the following industries as clean cards:
+
+• AI SaaS Platforms
+• AI Developer Tools
+• AI Infrastructure
+• AI Cloud Services
+• AI Data Platforms
+• AI Marketplaces
+• Enterprise AI Solutions
+• AI Research
+• AI Education
+• AI Consulting
+• AI Communities
+• AI News & Media
+• AI Startup Accelerators
+• Robotics & Automation
+• Defense & Aerospace AI
+• Healthcare AI
+• Financial AI
+• Cybersecurity AI
+• Manufacturing AI
+• Transportation & Mobility AI
+• Agriculture AI
+• Government AI
+• Environmental AI
+
+==================================================
+AVAILABLE FOR ACQUISITION
+==================================================
+
+Display prominently:
+
+AIGround.com
+
+Asking Price
+
+$100,000 USD
+
+Display:
+
+Serious inquiries and qualified offers are welcome.
+
+Include a prominent:
+
+Make an Offer
+
+button.
+
+==================================================
+SECURE TRANSACTION
+==================================================
+
+Briefly explain that the acquisition will be completed through a mutually agreed reputable escrow service to ensure a secure transaction for both buyer and seller.
+
+==================================================
+CONTACT
+==================================================
+
+Contact Holtek Solutions LLC
+
+2108 N ST STE N
+
+Sacramento, CA 95816, USA
+
+Phone:
++1 (951) 551-4528
+
+Email:
+holly@holtekllc.com
+
+Serious acquisition inquiries and qualified offers are welcome.
+
+==================================================
+FOOTER
+==================================================
+
+Holtek Solutions LLC
+
+Premium Digital Assets
+
+© 2026 Holtek Solutions LLC. All Rights Reserved.
+
+==================================================
+TECHNICAL EXPECTATIONS
+==================================================
+
+Build using modern web development best practices.
+
+The website should be:
+
+• Responsive
+• Accessible
+• SEO-friendly
+• Optimized for fast loading
+
+Include:
+
+• Clickable email address
+• Clickable phone number
+• Open Graph metadata
+• Schema.org structured data
+
+The finished website should feel like a premium technology company website and communicate confidence, trust, and exclusivity while encouraging serious acquisition inquiries.

@@ -1,84 +1,83 @@
-import { Reveal } from '@/components/Reveal';
-import { Mail, Phone, MapPin, Building2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+function FadeInView({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section id="contact" className="py-24 px-6 bg-muted/30 border-t border-border">
+      <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <Reveal>
+          <FadeInView>
             <div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-                Contact <span className="text-primary">Holtek Solutions LLC</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+                Contact Holtek Solutions LLC
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-                If you are interested in acquiring AIGround.com or would like additional information, please contact us directly. 
+              <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                Serious acquisition inquiries and qualified offers are welcome.
               </p>
-              
-              <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20 text-foreground/80 text-sm leading-relaxed mb-10">
-                Serious acquisition inquiries, partnership discussions, and qualified offers are welcome. All inquiries are handled professionally and confidentially. Additional information can be provided to qualified buyers upon request.
-              </div>
             </div>
-          </Reveal>
+          </FadeInView>
 
-          <Reveal direction="left">
-            <div className="glass-card p-8 md:p-12 rounded-3xl space-y-8">
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
-                  <Building2 className="w-6 h-6 text-primary" />
-                </div>
+          <FadeInView delay={0.1}>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-sm text-muted-foreground font-medium mb-1 uppercase tracking-wider">Company</h4>
-                  <div className="text-xl font-semibold text-foreground">Holtek Solutions LLC</div>
-                  <div className="text-muted-foreground">Premium Digital Assets</div>
-                </div>
-              </div>
-
-              <div className="w-full h-px bg-border"></div>
-
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-sm text-muted-foreground font-medium mb-1 uppercase tracking-wider">Address</h4>
-                  <address className="text-lg text-foreground not-italic">
+                  <div className="text-sm text-muted-foreground font-medium mb-1">Address</div>
+                  <address className="text-base text-foreground not-italic">
                     2108 N ST STE N<br />
                     Sacramento, CA 95816<br />
-                    United States
+                    USA
                   </address>
                 </div>
               </div>
 
-              <div className="w-full h-px bg-border"></div>
+              <div className="flex items-start gap-4">
+                <Phone className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                <div>
+                  <div className="text-sm text-muted-foreground font-medium mb-1">Phone</div>
+                  <a 
+                    href="tel:+19515514528" 
+                    className="text-base text-foreground hover:text-primary transition-colors"
+                    aria-label="Call +1 (951) 551-4528"
+                  >
+                    +1 (951) 551-4528
+                  </a>
+                </div>
+              </div>
 
-              <div className="flex flex-col sm:flex-row gap-8">
-                <a href="tel:+19515514528" className="flex items-start gap-5 group">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm text-muted-foreground font-medium mb-1 uppercase tracking-wider">Phone</h4>
-                    <div className="text-lg font-medium text-foreground group-hover:text-primary transition-colors">
-                      +1 (951) 551-4528
-                    </div>
-                  </div>
-                </a>
-
-                <a href="mailto:holly@holtekllc.com" className="flex items-start gap-5 group">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm text-muted-foreground font-medium mb-1 uppercase tracking-wider">Email</h4>
-                    <div className="text-lg font-medium text-foreground group-hover:text-primary transition-colors">
-                      holly@holtekllc.com
-                    </div>
-                  </div>
-                </a>
+              <div className="flex items-start gap-4">
+                <Mail className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                <div>
+                  <div className="text-sm text-muted-foreground font-medium mb-1">Email</div>
+                  <a 
+                    href="mailto:holly@holtekllc.com" 
+                    className="text-base text-foreground hover:text-primary transition-colors"
+                    aria-label="Email holly@holtekllc.com"
+                  >
+                    holly@holtekllc.com
+                  </a>
+                </div>
               </div>
             </div>
-          </Reveal>
+          </FadeInView>
         </div>
       </div>
     </section>

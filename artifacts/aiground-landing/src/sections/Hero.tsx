@@ -1,83 +1,55 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center pt-24 pb-12 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[140px]"></div>
-
-        {/* Grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_30%,transparent_100%)]"></div>
-      </div>
-
-      <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
+    <section className="relative min-h-[100dvh] flex items-center justify-center px-6 pt-16">
+      <div className="container mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary mb-8 text-sm font-medium tracking-wide backdrop-blur-md"
+          transition={{ duration: 0.5 }}
+          className="mb-12"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          Premium Domain Available for Acquisition
-        </motion.div>
-
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-foreground mb-6 leading-[1.1]"
-        >
-          Own One of the Internet's <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-secondary">
-            Premier AI Brands
-          </span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="my-12 py-8 px-6 md:px-12 rounded-3xl glass-card inline-block max-w-full"
-        >
-          <h2 className="text-4xl md:text-6xl font-mono font-bold tracking-tight text-foreground flex items-center justify-center gap-4 break-all">
-            <Globe className="text-primary w-8 h-8 md:w-12 md:h-12 flex-shrink-0 hidden sm:block" />
+          <h1 className="font-mono text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight">
             AIGround.com
-          </h2>
+          </h1>
         </motion.div>
+
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl md:text-5xl font-semibold text-foreground mb-6 leading-tight"
+        >
+          Own One of the Internet's Premier AI Brands
+        </motion.h2>
 
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed"
         >
-          AIGround.com is a premium .com domain built for the next generation of artificial intelligence. 
-          Short, memorable, and highly brandable, it provides an exceptional foundation for startups, 
-          enterprises, investors, and innovators building AI products and services.
+          AIGround.com is a premium .com domain built for the next generation of artificial intelligence. Short, memorable, and highly brandable, it provides an exceptional foundation for companies building innovative AI products and services.
         </motion.p>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
             href="mailto:holly@holtekllc.com"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-full transition-all shadow-[0_0_30px_hsla(217,100%,60%,0.3)] hover:shadow-[0_0_40px_hsla(217,100%,60%,0.5)] group"
+            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold px-8 py-3 rounded-md transition-colors"
+            aria-label="Make an offer via email"
           >
             Make an Offer
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a 
             href="#contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent hover:bg-muted border-2 border-border text-foreground text-lg font-semibold px-8 py-4 rounded-full transition-colors"
+            className="w-full sm:w-auto bg-secondary hover:bg-muted text-secondary-foreground text-base font-semibold px-8 py-3 rounded-md transition-colors"
+            aria-label="Contact us"
           >
             Contact Us
           </a>
