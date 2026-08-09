@@ -69,10 +69,17 @@ export function Contact() {
                   <div className="text-sm text-muted-foreground font-medium mb-1">Email</div>
                   <a 
                     href="mailto:holly@holtekllc.com" 
-                    className="text-base text-foreground hover:text-primary transition-colors"
+                    className="block text-base text-foreground hover:text-primary transition-colors"
                     aria-label="Email holly@holtekllc.com"
                   >
                     holly@holtekllc.com
+                  </a>
+                  <a 
+                    href="mailto:holly@holteksolutions.com" 
+                    className="block text-base text-foreground hover:text-primary transition-colors mt-1"
+                    aria-label="Email holly@holteksolutions.com"
+                  >
+                    holly@holteksolutions.com
                   </a>
                 </div>
               </div>

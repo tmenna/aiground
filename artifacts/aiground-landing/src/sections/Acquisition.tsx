@@ -49,7 +49,7 @@ export function Acquisition() {
             </p>
             
             <a 
-              href="mailto:holly@holtekllc.com"
+              href="mailto:holly@holtekllc.com,holly@holteksolutions.com"
               className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold px-8 py-3 rounded-md transition-colors mb-12"
               aria-label="Make an offer via email"
             >

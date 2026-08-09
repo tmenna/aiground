@@ -50,7 +50,7 @@ export function Navbar() {
                 </a>
               ))}
               <a 
-                href="mailto:holly@holtekllc.com"
+                href="mailto:holly@holtekllc.com,holly@holteksolutions.com"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold px-5 py-2 rounded-md transition-colors"
                 aria-label="Make an offer via email"
               >
@@ -104,7 +104,7 @@ export function Navbar() {
                   </a>
                 ))}
                 <a 
-                  href="mailto:holly@holtekllc.com"
+                  href="mailto:holly@holtekllc.com,holly@holteksolutions.com"
                   className="mt-6 bg-primary text-primary-foreground text-base font-semibold px-5 py-3 rounded-md text-center"
                   aria-label="Make an offer via email"
                 >
