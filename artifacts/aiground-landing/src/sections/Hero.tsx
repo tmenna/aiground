@@ -40,7 +40,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
-            href="mailto:holly@holtekllc.com,holly@holteksolutions.com"
+            href="mailto:holly@holteksolutions.com"
             className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold px-8 py-3 rounded-md transition-colors"
             aria-label="Make an offer via email"
           >
